@@ -1,7 +1,7 @@
 const list = [1,2,3,4,5,6]
 const list2 = [10,20,30,40,50]
 const list3 = [5]
-const list4 = [1,2,5,10,15,23,24,25,55]
+const list4 = [1,2,5,10,15,23,24,27,55]
 
 
 function changePositions(list, s) {
@@ -13,7 +13,7 @@ function changePositions(list, s) {
     for (let j = 0; j < strNum.length; j++) {
       const dig = strNum[j]; 
       const digToInt = parseInt(dig)
-      if (digToInt != s) {
+      if (digToInt < s) {
         finalNum = finalNum+dig
       }
     } 
