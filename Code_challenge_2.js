@@ -1,19 +1,28 @@
-const numbers = [1,2,5,10]
-function sortedSquareArray(array,s){
-  let newArr  = []
+function sortedSquareArray(array, s) {
+  let newArr = []
   let squareNum = null
-  const ss = parseInt(s.toString()+s.toString())
+  let orderNumbers = []
+  const ss = parseInt(s.toString() + s.toString())
   for (let i = 0; i < array.length; i++) {
     const num = array[i];
-    squareNum = num*num
-    if (squareNum < ss ) {
-      newArr.push(squareNum)     
+    squareNum = num * num
+    if (squareNum < ss) {
+      newArr.push(squareNum)
     }
   }
-  //for (let j = 0; j < newArr.length-1; j++) {
-   // const num = newArr[j];
-   // if
-  //}
-  console.log(newArr)
+  let left = 0
+  let right = newArr.length - 1
+  let element = null
+  while (left <= right) {
+    if (newArr[left] > newArr[right]) {
+      element = [newArr[left]]
+      left++
+    } else {
+      element = [newArr[right]]
+      right--
+    }
+    orderNumbers = element.concat(orderNumbers)
+  }
+  console.log(orderNumbers)
 }
-sortedSquareArray(numbers,5)
+sortedSquareArray([-2,-1,1,3,5,10], 5)
