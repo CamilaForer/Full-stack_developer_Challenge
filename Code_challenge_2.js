@@ -1,11 +1,10 @@
 function sortedSquareArray(array, s) {
   let newArr = []
-  let squareNum = null
   let orderNumbers = []
   const ss = parseInt(s.toString() + s.toString())
   for (let i = 0; i < array.length; i++) {
     const num = array[i];
-    squareNum = num * num
+    const squareNum = num * num
     if (squareNum < ss) {
       newArr.push(squareNum)
     }
