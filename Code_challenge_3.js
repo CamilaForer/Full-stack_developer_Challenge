@@ -1,3 +1,4 @@
+//Función encargada de encontrar todas las sumas posibles
 function combineAndSum(accum, index,coins, sums){
   if (index>=coins.length) {
     sums.push(accum)
@@ -9,7 +10,7 @@ function combineAndSum(accum, index,coins, sums){
 function findJump(sums){
   let i = 0;
   let jump = null
-  while (i < sums.length-1) {
+  while (i < sums.length-1 && jump == null) {
     const change = sums[i];
     if (change != sums[i+1] && change+1 !=sums[i+1]) {
       jump = change+1
@@ -24,7 +25,9 @@ function findJump(sums){
 function noChange(coins){
   let sums = []
   combineAndSum(0,0,coins,sums)
-  sums=sums.sort()
+  sums=sums.sort(function(a, b) {
+    return a - b;
+  })
   return findJump(sums)
   
 }

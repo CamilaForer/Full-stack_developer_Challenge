@@ -3,9 +3,9 @@ const list2 = [10,20,30,40,50]
 const list3 = [5]
 const list4 = [1,2,5,10,15,23,24,27,55]
 
-
 function changePositions(list, s) {
   let res = [] 
+  //Recorrido de array de manera inversa
   for (let i = list.length - 1; i >= 0; i--) {
     const num = list[i];
     const strNum = num.toString()
@@ -24,4 +24,4 @@ function changePositions(list, s) {
   return res
 }
 
-console.log(changePositions(list4, 5))
+console.log(changePositions(list, 5))
